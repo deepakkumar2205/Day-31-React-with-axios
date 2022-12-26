@@ -1,7 +1,8 @@
-import { Card, CardBody, Heading, Highlight, List, ListIcon, ListItem, Text, UnorderedList } from '@chakra-ui/react'
+import { Card, CardBody, Heading, Highlight, Link, List, ListIcon, ListItem, Text, UnorderedList } from '@chakra-ui/react'
 import React from 'react'
 import './App.css'
 import { MdCheckCircle } from 'react-icons/md'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 export default function Home() {
   return (
@@ -11,7 +12,6 @@ export default function Home() {
         <div style={{display:'flex' ,
                      width:'75%',
                      justifyContent:'center',
-                     
                      }}>
         <Card className='.bg-image' w='500px' style={{zIndex:'1',position:'relative',backgroundColor:'white' }}>
           <div style={{zIndex:'-1',position:'absolute',top:'0',bottom:'0',left:'0',right:'0',filter:'blur(4px)',opacity:'0.5'}}></div>
@@ -25,7 +25,10 @@ export default function Home() {
     query='Chakra ui'
     styles={{ px: '2', py: '1', rounded: 'full', bg: 'red.100' ,fontWeight:'bold'}}
   >
-    Chakra ui library is used to create this project.</Highlight>
+   Chakra ui library is used to create this project.</Highlight>
+   <Link color='teal.500' href='https://chakra-ui.com' isExternal> <br/>
+    chakra-ui.com <ExternalLinkIcon mx='2px' />
+  </Link>
   </ListItem>
   <ListItem>
     <ListIcon as={MdCheckCircle} color='green.500' />

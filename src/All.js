@@ -1,8 +1,8 @@
 import { SearchIcon } from '@chakra-ui/icons';
-import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
-import React, { useContext, useState } from 'react'
-import Context from './context'
-import { TableTemplate } from './TableTemplate'
+import { Heading, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
+import React, { useContext, useState } from 'react';
+import Context from './context';
+import { TableTemplate } from './TableTemplate';
 
 export const All = () => {
   const shop=useContext(Context);
@@ -19,7 +19,8 @@ export const All = () => {
     
     return (<>
     <br/>
-      <InputGroup >
+      <Heading size='lg'><u>All Students and Teacher are listed here.</u></Heading>
+      <br></br><InputGroup >
       <InputLeftElement
         pointerEvents='none'
         bgColor={'#4299E1'}

@@ -17,8 +17,11 @@ export const Form = () => {
     const {id}= useParams();
     const {state} = useLocation();
     const toast =useToast();
-    // console.log(id,state);
-    const [input, setInput] = React.useState({image:'https://bit.ly/dan-abramov' ,email:'Adah_Leannon23@hotmail.com',dob:'22-25-1997',age:'25',address:'gingee',phone:'789456123',gender:'male' ,name:'user',who:'30'})
+    const [input, setInput] = React.useState({image:'' ,email:'',dob:'',age:'',address:'',phone:'',gender:'' ,name:'',who:''})
+
+    useEffect(()=>{
+      setInput({image:'' ,email:'',dob:'',age:'',address:'',phone:'',gender:'' ,name:'',who:''})
+    },[state])
 
     const validationWho = input.who==='';
     const validationurl = input.image==='';
@@ -29,6 +32,7 @@ export const Form = () => {
     const validationAddress = input.address==='';
     const validationPhone = input.phone==='';
 
+
     useEffect(()=>{
 
       if(state !=null)  {
@@ -38,7 +42,6 @@ export const Form = () => {
     const handleInputChange = (e) => {setInput({...input,[e.target.name]:(e.target.value)})}
     // creating user
     const handleSubmit = ()=>{
-      console.log( validationAddress);
       if( validationAddress === false && validationDob === false && validationEmail === false && validationGender === false && validationName === false && validationPhone === false && validationWho === false && validationurl === false){
         
         axios.post('https://636c8f127f47ef51e14ba6ab.mockapi.io/stud-teacher',input).then(()=>
@@ -52,12 +55,16 @@ export const Form = () => {
     }
     
     const handleUpdate = ()=>{
-      console.log(input);
-      axios.put('https://636c8f127f47ef51e14ba6ab.mockapi.io/stud-teacher/'+id,input).then(()=>{shop.getProducts()
-         toast({title:'Person Updated !',position:'top',status: "success" ,duration:2000, isClosable:true})
-      
-         navigate(-1)
-        })
+      if( validationAddress === false && validationDob === false && validationEmail === false && validationGender === false && validationName === false && validationPhone === false && validationWho === false && validationurl === false){
+        axios.put('https://636c8f127f47ef51e14ba6ab.mockapi.io/stud-teacher/'+id,input).then(()=>{
+        shop.getProducts()
+        toast({title:'Person Updated !',position:'top',status: "success" ,duration:2000, isClosable:true})
+        navigate(-1)
+      })
+      }else{
+          toast({title:'Please Fill the Form And Proceed!',position:'top',status: "error" ,duration:2000, isClosable:true})
+
+        }
     }
   
 
@@ -79,6 +86,8 @@ export const Form = () => {
               borderRadius='full'
               boxSize='150px'
               src={input.image}
+              border={'1px solid black'}
+              alt=''
               
             /><br/>
             <FormLabel as='legend' >Who</FormLabel>

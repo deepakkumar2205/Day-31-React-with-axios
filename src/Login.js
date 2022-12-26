@@ -1,5 +1,5 @@
 import React ,{useContext, useState} from 'react'
-import { Container , Card , CardBody , Stack , Divider , Heading , CardFooter , Button , InputGroup , InputLeftElement , InputRightElement , Input , Icon, useToast }  from '@chakra-ui/react'
+import { Container , Card , CardBody , Stack , Divider , Heading , CardFooter , Button , InputGroup , InputLeftElement , InputRightElement , Input , Icon, useToast, Alert, AlertIcon }  from '@chakra-ui/react'
 import {FaUserCircle} from 'react-icons/fa'
 import { RiLockPasswordLine } from 'react-icons/ri'
 import Context from './context'
@@ -32,7 +32,12 @@ function Login() {
 
   return (
     <div>
-            <Heading style={{textAlign:'left'}}>Student Teacher Management</Heading>
+            <Heading style={{textAlign:'left'}}>Student Teacher Management</Heading><br/>
+            <Alert status='info'>
+            <AlertIcon />
+             <b>UserName: &nbsp;</b><span> &nbsp; &nbsp; enter &nbsp;  &nbsp; &nbsp; &nbsp;</span>
+             <b>password:  &nbsp;</b><span> &nbsp; &nbsp; &nbsp; &nbsp; authenticate</span>
+            </Alert>
         <Container  style={{display:'flex', alignItems:'center' , height:'70vh', width:"100%"}}>
         <Card maxW='sm' style={{display:'flex', alignItems:'center' ,backgroundImage:'url(https://img.freepik.com/free-vector/abstract-background-vector-illustration_460848-12729.jpg?w=2000)' }}>
             <CardBody>

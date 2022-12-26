@@ -11,19 +11,19 @@ const Dashboard = () => {
     <Divider />
     <Breadcrumb separator='-'>
       <BreadcrumbItem>
-        <Link to='/'>Home</Link>
+        <Link className='linkstyle' to='/'>Home</Link>
       </BreadcrumbItem>
       <BreadcrumbItem>
-      <Link to='/all'>All</Link>
+      <Link className='linkstyle' to='/all'>All</Link>
       </BreadcrumbItem>
       <BreadcrumbItem>
-        <Link to='/students'>Students</Link>
+        <Link className='linkstyle' to='/students'>Students</Link>
       </BreadcrumbItem>
       <BreadcrumbItem>
-        <Link to='/teachers'>Teachers</Link>
+        <Link className='linkstyle' to='/teachers'>Teachers</Link>
       </BreadcrumbItem>
       <BreadcrumbItem isCurrentPage>
-        <Link to='/form'>Create</Link>
+        <Link className='linkstyle' to='/form'>Create</Link>
       </BreadcrumbItem>
     </Breadcrumb>
     </div>

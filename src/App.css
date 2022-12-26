@@ -47,3 +47,7 @@
   text-align: center !important;
   color: blue;
 }
+
+.linkstyle:hover{
+  font-weight: bolder;
+}

@@ -9,7 +9,7 @@ export const TableTemplate = ({data}) => {
       <br/>
       <Table variant='simple'>
     <Thead >
-      <Tr >
+      <Tr bg='#A0AEC0'>
         <Th >Id</Th>
         <Th >Image</Th>
         <Th >Name</Th>

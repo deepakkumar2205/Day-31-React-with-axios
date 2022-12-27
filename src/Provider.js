@@ -10,7 +10,7 @@ export default function Provider(props) {
   const [allData ,setAllData] = useState([]);
   
   const getProducts = () =>{
-    axios.get('https://636c8f127f47ef51e14ba6ab.mockapi.io/stud-teacher').then((data)=>setAllData(data.data))
+    axios.get('https://636c8f127f47ef51e14ba6ab.mockapi.io/stud-teacher').then((data)=>setAllData(data.data)).catch((err)=>console.log(err));
   }
   useEffect(()=>getProducts(),[])
 

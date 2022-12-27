@@ -1,5 +1,5 @@
 
-import { TableCaption, TableContainer , Stack , Table , Td , Th , Thead , Tr , Tbody , Avatar, Button } from '@chakra-ui/react'
+import { Table, TableCaption, TableContainer, Tbody, Th, Thead, Tr } from '@chakra-ui/react'
 import React from 'react'
 import { PersonTemp } from './personTemp'
 
@@ -12,7 +12,7 @@ export const TableTemplate = ({data}) => {
     <Thead>
       <Tr >
         <Th >Id</Th>
-        <Th>Image</Th>
+        <Th >Image</Th>
         <Th >Name</Th>
         <Th >gender</Th>
         <Th >D.O.B</Th>

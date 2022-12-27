@@ -36,7 +36,7 @@ export const Form = () => {
     useEffect(()=>{
 
       if(state !=null)  {
-        axios.get('https://636c8f127f47ef51e14ba6ab.mockapi.io/stud-teacher/'+id).then((data)=>setInput(data.data))
+        axios.get('https://636c8f127f47ef51e14ba6ab.mockapi.io/stud-teacher/'+id).then((data)=>setInput(data.data)).catch((error)=>console.log(error))
       }
     },[state])
     const handleInputChange = (e) => {setInput({...input,[e.target.name]:(e.target.value)})}
@@ -60,25 +60,21 @@ export const Form = () => {
         shop.getProducts()
         toast({title:'Person Updated !',position:'top',status: "success" ,duration:2000, isClosable:true})
         navigate(-1)
-      })
+      }).catch((error)=>console.log(error));
       }else{
           toast({title:'Please Fill the Form And Proceed!',position:'top',status: "error" ,duration:2000, isClosable:true})
-
-        }
+      }
     }
   
 
   return (
     <Container maxW='800px'  >
-      
         {state === null ? 
         <FormLabel as='legend'  bgGradient='linear(to-r, gray.300, yellow.400, pink.200)'><EditIcon/> Fill the Bellow Form to Add the person into the Database</FormLabel>
         :
         state.isView === true ?  <FormLabel as='legend'  bgGradient='linear(to-r, gray.300, yellow.400, pink.200)'><Icon as={BiBookReader}/> Read Only Mode</FormLabel> : 
         <FormLabel as='legend'  bgGradient='linear(to-r, gray.300, yellow.400, pink.200)'><Icon as={GrUpdate}/> Update</FormLabel>
         }
-        
-        
         <hr/>
         <FormControl isInvalid isDisabled={state != null? state.isView : null} ><br></br>
             {/* image */}
@@ -88,7 +84,6 @@ export const Form = () => {
               src={input.image}
               border={'1px solid black'}
               alt=''
-              
             /><br/>
             <FormLabel as='legend' >Who</FormLabel>
             <RadioGroup  value={input.who<80?'30':'90'} onChange={d=>setInput({...input,who:d})}  >
@@ -165,7 +160,6 @@ export const Form = () => {
           >
             Create
           </Button>}
-
         </FormControl>
     </Container>
   )

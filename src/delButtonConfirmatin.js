@@ -13,7 +13,7 @@ export function DelButton({data}) {
         shop.getProducts();
         onToggle()
         toast({title:'Person Removed Successfully',position:'top',status: "success" ,duration:2000, isClosable:true})
-    })
+    }).catch((error)=>console.log(error))
   
     }
   

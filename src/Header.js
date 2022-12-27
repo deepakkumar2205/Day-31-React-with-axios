@@ -12,6 +12,12 @@ const Header = () =>{
     shop.setLoginState('false')
     navigate("/login")
   }
+  
+  const themeChange =()=>{
+    console.log('chenge')
+    shop.colormode==='light'? shop.setColorMode('dark'):shop.setColorMode('light');
+  }
+  
     return  <Flex minWidth='max-content' alignItems='center' gap='2'>
             <Box p='2'>
               <Heading size='md'>Student Teacher Management</Heading>
@@ -20,7 +26,7 @@ const Header = () =>{
             <Spacer />
             <ButtonGroup gap='2'>
             <SunIcon />
-              <Switch id='isRequired'  isRequired  />
+              <Switch id='isRequired'  isRequired onChange={themeChange} />
               <MoonIcon />
               <Button colorScheme='teal' onClick={handleLogout}>Log Out</Button>
             </ButtonGroup>

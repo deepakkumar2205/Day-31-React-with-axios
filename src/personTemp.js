@@ -23,9 +23,9 @@ export const PersonTemp = ({person}) => {
         <Td >{person.who<80? <Badge colorScheme='green'>Student</Badge>:<Badge colorScheme='red'>Teacher</Badge>}</Td>
         <Td >
           <Stack direction='row' spacing={3}>
-            <Button colorScheme="blue" onClick={()=>navigate(`/form/${person.id}`,{state:{isView:true}})}><ViewIcon /></Button>
-            <Button colorScheme='green' onClick={()=>navigate(`/form/${person.id}`,{state:{isView:false}})}><EditIcon /></Button>
-            <DelButton data={person.id}/>
+            <Button colorScheme="blue" onClick={()=>navigate(`/form/${person.id}`,{state:{isView:true}})}><ViewIcon  bg='transparent'/></Button>
+            <Button colorScheme='green' onClick={()=>navigate(`/form/${person.id}`,{state:{isView:false}})}><EditIcon bg='transparent' /></Button>
+            <DelButton data={person.id} />
           </Stack>
         </Td>
       </Tr>

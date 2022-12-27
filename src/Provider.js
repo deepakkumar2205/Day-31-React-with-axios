@@ -3,10 +3,10 @@ import Context from "./context";
 import axios from "axios";
 
 export default function Provider(props) {
-  const [colormode,setColorMode] = useState();
-  localStorage.setItem('chakra-ui-color-mode',colormode)
+  const [colormode,setColorMode] = useState('light');
+  localStorage.setItem('chakra-ui-color-mode','undefined')
   const [loginState, setLoginState] = useState(localStorage.getItem('loggedin'));
-
+  
   const [allData ,setAllData] = useState([]);
   
   const getProducts = () =>{

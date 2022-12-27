@@ -1,9 +1,10 @@
 import React ,{useContext, useState} from 'react'
-import { Container , Card , CardBody , Stack , Divider , Heading , CardFooter , Button , InputGroup , InputLeftElement , InputRightElement , Input , Icon, useToast, Alert, AlertIcon }  from '@chakra-ui/react'
+import { Container , Card , CardBody , Stack , Divider , Heading , CardFooter , Button , InputGroup , InputLeftElement , InputRightElement , Input , Icon, useToast, Alert, AlertIcon, Switch }  from '@chakra-ui/react'
 import {FaUserCircle} from 'react-icons/fa'
 import { RiLockPasswordLine } from 'react-icons/ri'
 import Context from './context'
 import { useNavigate } from 'react-router-dom'
+import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 
 function Login() {
     const store = useContext(Context)
@@ -29,16 +30,26 @@ function Login() {
           toast({title:'Login Credentials Invalid',position:'top',status: "error" ,duration:2000, isClosable:true})
         }
     }
+    const themeChange = ()=>{
+      store.colormode==='light'? store.setColorMode('dark'):store.setColorMode('light');
+    }
 
   return (
-    <div>
-            <Heading style={{textAlign:'left'}}>Student Teacher Management</Heading><br/>
-            <Alert status='info'>
+    <div>   
+           <div style={{display:"flex"}}>
+                <Heading style={{textAlign:'left'}}>Student Teacher Management</Heading>
+                <div style={{display:'flex',alignItems:'center',marginLeft:'auto',marginRight:'50px'}}>
+                  <SunIcon />
+                  <Switch id='isRequired'  isRequired onChange={themeChange} />
+                  <MoonIcon />
+                </div>
+            </div><br/>
+            <Alert status='info' color='black'>
             <AlertIcon />
              <b>UserName: &nbsp;</b><span> &nbsp; &nbsp; enter &nbsp;  &nbsp; &nbsp; &nbsp;</span>
              <b>password:  &nbsp;</b><span> &nbsp; &nbsp; &nbsp; &nbsp; authenticate</span>
             </Alert>
-        <Container  style={{display:'flex', alignItems:'center' , height:'70vh', width:"100%"}}>
+        <Container  style={{display:'flex', alignItems:'center' , height:'70vh', width:"100%" , color:'black'}}>
         <Card maxW='sm' style={{display:'flex', alignItems:'center' ,backgroundImage:'url(https://img.freepik.com/free-vector/abstract-background-vector-illustration_460848-12729.jpg?w=2000)' }}>
             <CardBody>
                 <Stack mt='6' spacing='3'>

@@ -19,21 +19,19 @@ export function DelButton({data}) {
   
     return (
       <>
-        <Button onClick={onToggle} colorScheme='red' >
-          <DeleteIcon/>
-        </Button>
+       
         <Popover
           returnFocusOnClose={false}
           isOpen={isOpen}
           onClose={onClose}
           placement='right'
           closeOnBlur={false}
-        >
-          <PopoverTrigger>
+             >
+          <PopoverTrigger >
             <span></span>
-          </PopoverTrigger>
-          <PopoverContent>
-            <PopoverHeader fontWeight='semibold'>Confirmation</PopoverHeader>
+          </PopoverTrigger >
+          <PopoverContent bg='#64b5f6'>
+            <PopoverHeader  fontWeight='semibold'>Confirmation</PopoverHeader>
             <PopoverArrow />
             <PopoverCloseButton />
             <PopoverBody>
@@ -47,6 +45,9 @@ export function DelButton({data}) {
             </PopoverFooter>
           </PopoverContent>
         </Popover>
+        <Button onClick={onToggle} colorScheme='red'  >
+          <DeleteIcon bg='transparent'/>
+        </Button>
       </>
     )
   }

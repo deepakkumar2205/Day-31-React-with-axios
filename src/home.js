@@ -1,20 +1,24 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Card, CardBody, Heading, Highlight, Link, List, ListIcon, ListItem, UnorderedList } from '@chakra-ui/react'
-import React from 'react'
+import React, { useContext } from 'react'
 import { MdCheckCircle } from 'react-icons/md'
 import './App.css'
+import context from './context'
 
 export default function Home() {
+	const shop =useContext(context);
   return (
     <div><br/>
     <div style={{height:'85vh',alignItems:'center',width:'100%',display:'flex',backgroundSize:'cover',zIndex:'-1',filter:'blur(0px)',backgroundRepeat:'no-repeat',backgroundImage:'url(https://images.immediate.co.uk/production/volatile/sites/4/2021/08/mountains-7ddde89.jpg?quality=90&resize=768,574)'}}>
-        <Heading as={'h1'} size='3xl'>Welcome to Home page</Heading>
+        <Heading bg='transparent' as={'h1'} size='3xl' color='green'>Welcome to Home page</Heading>
 			<div style={{display:'flex' ,
 						width:'75%',
 						justifyContent:'center',
+						background:'transparent',
 						}}>
-        <Card className='.bg-image' w='500px' style={{zIndex:'1',position:'relative',backgroundColor:'white' }}>
-		<div style={{zIndex:'-1',position:'absolute',top:'0',bottom:'0',left:'0',right:'0',filter:'blur(4px)',opacity:'0.5'}}></div>
+        <Card  w='500px' style={
+			shop.colormode ==='light'?{zIndex:'1',position:'relative',color:'black',backgroundColor:'white'}:{zIndex:'1',position:'relative',color:'white',backgroundColor:'#1A365D'}
+		} >
 			<CardBody  className='.bg-text' >
 			<Heading as='h4' size='md'>About This Project</Heading><hr/>
 			<br/>

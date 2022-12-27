@@ -51,3 +51,15 @@
 .linkstyle:hover{
   font-weight: bolder;
 }
+#root{
+  margin: 0;
+  width: auto;
+  height: 0 !important;
+  background-color: red;
+}
+.App{
+  padding: 15px;
+}
+.c{
+  color:'white' !important
+}

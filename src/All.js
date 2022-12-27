@@ -25,7 +25,7 @@ export const All = () => {
         bgColor={'#4299E1'}
         borderRadius={'5px'}
 
-        children={<SearchIcon  color='white' />}
+        children={<SearchIcon bg='transparent' color='white' />}
       />
       <Input type='tel' placeholder=' Enter Name to Search' w={'500px'} onChange={handleChange}/>
     </InputGroup>

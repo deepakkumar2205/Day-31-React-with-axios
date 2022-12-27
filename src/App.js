@@ -1,31 +1,27 @@
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
+import React, { useContext } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { All } from './All';
 import './App.css';
-import React, { useContext, useState }  from 'react'
-import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
-import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
+import Context from './context';
+import Dashboard from './dashboard';
+import { Form } from './form';
 import Home from './home';
 import Login from './Login';
-import { All } from './All';
-import Teachers from './Teachers';
-import { Students } from './Students';
-import Provider from './Provider';
 import ProtectedRoute from './ProtectedRouter';
-import Dashboard from './dashboard';
-import Context from './context';
-import { extendTheme } from "@chakra-ui/react"
-import { Form } from './form';
+import { Students } from './Students';
+import Teachers from './Teachers';
 
 function App() {
   let isLoggedin  = localStorage.getItem("loggedin");
   const shop = useContext(Context);
 
-  const theme = extendTheme({
-    initialColorMode: 'light',
-    useSystemColorMode: shop.colormode
-  })
-
   return (
-    <div className="App">
-      <ChakraProvider theme={theme}>
+    <div className="App" style={
+      shop.colormode ==='light'?{background:'white',color:'black',minHeight:'100vh'}:{background:'#1A365D',color:'white',minHeight:'100vh'}
+    }>
+      <div></div>
+      <ChakraProvider>
         <ColorModeScript initialColorMode='black' />
      
         <BrowserRouter>

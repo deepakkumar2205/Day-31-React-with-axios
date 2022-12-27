@@ -8,8 +8,7 @@ export const TableTemplate = ({data}) => {
     <TableContainer >
       <br/>
       <Table variant='simple'>
-         <TableCaption>All Data</TableCaption>
-    <Thead>
+    <Thead >
       <Tr >
         <Th >Id</Th>
         <Th >Image</Th>
